@@ -140,11 +140,8 @@ message CreateClusterMsg {
 message CreateClusterReply {
     // Whether or not the cluster was provisioned by this request
     bool ok = 1;
-
-    oneof cluster_or_error {
-        ClusterItem cluster = 2;
-        Error error = 7;
-    }
+    // The cluster
+    ClusterItem cluster = 2;
 }
 
 message GetClusterMsg {
@@ -155,11 +152,8 @@ message GetClusterMsg {
 message GetClusterReply {
     // Is the cluster in the system
     bool ok = 1;
-
-    oneof cluster_or_error {
-        ClusterDetailItem cluster = 2;
-        Error error = 7;
-    }
+    // The cluster details
+    ClusterDetailItem cluster = 2;
 }
 
 message DeleteClusterMsg {
@@ -202,6 +196,13 @@ message ClusterDetailItem {
     string status = 3;
     // What is the kubeconfig to connect to the cluster
     string kubeconfig = 4;
+}
+
+message ErrorReply {
+    // Its not ok
+    bool ok = 1;
+    // The error
+    Error error = 2;
 }
 
 message Error {

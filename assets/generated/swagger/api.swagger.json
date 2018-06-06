@@ -414,10 +414,8 @@
           "title": "Whether or not the cluster was provisioned by this request"
         },
         "cluster": {
-          "$ref": "#/definitions/cluster_manager_apiClusterItem"
-        },
-        "error": {
-          "$ref": "#/definitions/cluster_manager_apiError"
+          "$ref": "#/definitions/cluster_manager_apiClusterItem",
+          "title": "The cluster"
         }
       }
     },
@@ -446,19 +444,6 @@
         "message": {
           "type": "string",
           "title": "What messages were given"
-        }
-      }
-    },
-    "cluster_manager_apiError": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "string",
-          "title": "The error code"
-        },
-        "message": {
-          "type": "string",
-          "title": "The error message"
         }
       }
     },
@@ -530,10 +515,8 @@
           "title": "Is the cluster in the system"
         },
         "cluster": {
-          "$ref": "#/definitions/cluster_manager_apiClusterDetailItem"
-        },
-        "error": {
-          "$ref": "#/definitions/cluster_manager_apiError"
+          "$ref": "#/definitions/cluster_manager_apiClusterDetailItem",
+          "title": "The cluster details"
         }
       }
     },

@@ -16,6 +16,7 @@
     - [DeleteHelmChartMsg](#cluster_manager_api.DeleteHelmChartMsg)
     - [DeleteHelmChartReply](#cluster_manager_api.DeleteHelmChartReply)
     - [Error](#cluster_manager_api.Error)
+    - [ErrorReply](#cluster_manager_api.ErrorReply)
     - [GenericHelmChart](#cluster_manager_api.GenericHelmChart)
     - [GenericHelmRepository](#cluster_manager_api.GenericHelmRepository)
     - [GetClusterListMsg](#cluster_manager_api.GetClusterListMsg)
@@ -52,6 +53,7 @@
     - [DeleteHelmChartMsg](#cluster_manager_api.DeleteHelmChartMsg)
     - [DeleteHelmChartReply](#cluster_manager_api.DeleteHelmChartReply)
     - [Error](#cluster_manager_api.Error)
+    - [ErrorReply](#cluster_manager_api.ErrorReply)
     - [GenericHelmChart](#cluster_manager_api.GenericHelmChart)
     - [GenericHelmRepository](#cluster_manager_api.GenericHelmRepository)
     - [GetClusterListMsg](#cluster_manager_api.GetClusterListMsg)
@@ -197,8 +199,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ok | [bool](#bool) |  | Whether or not the cluster was provisioned by this request |
-| cluster | [ClusterItem](#cluster_manager_api.ClusterItem) |  |  |
-| error | [Error](#cluster_manager_api.Error) |  |  |
+| cluster | [ClusterItem](#cluster_manager_api.ClusterItem) |  | The cluster |
 
 
 
@@ -278,6 +279,22 @@
 | ----- | ---- | ----- | ----------- |
 | code | [string](#string) |  | The error code |
 | message | [string](#string) |  | The error message |
+
+
+
+
+
+
+<a name="cluster_manager_api.ErrorReply"/>
+
+### ErrorReply
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ok | [bool](#bool) |  | Its not ok |
+| error | [Error](#cluster_manager_api.Error) |  | The error |
 
 
 
@@ -370,8 +387,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ok | [bool](#bool) |  | Is the cluster in the system |
-| cluster | [ClusterDetailItem](#cluster_manager_api.ClusterDetailItem) |  |  |
-| error | [Error](#cluster_manager_api.Error) |  |  |
+| cluster | [ClusterDetailItem](#cluster_manager_api.ClusterDetailItem) |  | The cluster details |
 
 
 
@@ -699,8 +715,7 @@ The response to Hello World
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ok | [bool](#bool) |  | Whether or not the cluster was provisioned by this request |
-| cluster | [ClusterItem](#cluster_manager_api.ClusterItem) |  |  |
-| error | [Error](#cluster_manager_api.Error) |  |  |
+| cluster | [ClusterItem](#cluster_manager_api.ClusterItem) |  | The cluster |
 
 
 
@@ -780,6 +795,22 @@ The response to Hello World
 | ----- | ---- | ----- | ----------- |
 | code | [string](#string) |  | The error code |
 | message | [string](#string) |  | The error message |
+
+
+
+
+
+
+<a name="cluster_manager_api.ErrorReply"/>
+
+### ErrorReply
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ok | [bool](#bool) |  | Its not ok |
+| error | [Error](#cluster_manager_api.Error) |  | The error |
 
 
 
@@ -872,8 +903,7 @@ The response to Hello World
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | ok | [bool](#bool) |  | Is the cluster in the system |
-| cluster | [ClusterDetailItem](#cluster_manager_api.ClusterDetailItem) |  |  |
-| error | [Error](#cluster_manager_api.Error) |  |  |
+| cluster | [ClusterDetailItem](#cluster_manager_api.ClusterDetailItem) |  | The cluster details |
 
 
 
