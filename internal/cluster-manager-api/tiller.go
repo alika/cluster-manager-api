@@ -13,7 +13,6 @@ import (
 )
 
 func (s *Server) ProvisionTiller(ctx context.Context, in *pb.ProvisionTillerMsg) (*pb.ProvisionTillerReply, error) {
-	SetLogger()
 	cma.CreateSDSPackageManager(cma.GenerateSDSPackageManager(cma.SDSPackageManagerOptions{
 		Name:            in.Cluster,
 		Namespace:       in.Namespace,

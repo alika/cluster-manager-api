@@ -63,6 +63,8 @@ func addRestAndWebsite(tcpMux cmux.CMux, grpcPortNumber int) {
 
 func addgRPCRestGateway(router *http.ServeMux, grpcPortNumber int) {
 	dopts := []grpc.DialOption{grpc.WithInsecure()}
+
+	runtime.HTTPError = service.CustomHTTPError
 	gwmux := runtime.NewServeMux()
 	pb.RegisterClusterHandlerFromEndpoint(context.Background(), gwmux, "localhost:"+strconv.Itoa(grpcPortNumber), dopts)
 	router.Handle("/api/", gwmux)
