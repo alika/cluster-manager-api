@@ -91,7 +91,7 @@ func swaggerUiFavicon16x16Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/favicon-16x16.png", size: 445, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/favicon-16x16.png", size: 445, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -111,7 +111,7 @@ func swaggerUiFavicon32x32Png() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/favicon-32x32.png", size: 1141, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/favicon-32x32.png", size: 1141, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -131,7 +131,7 @@ func swaggerUiIndexHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/index.html", size: 1502, mode: os.FileMode(420), modTime: time.Unix(1528412055, 0)}
+	info := bindataFileInfo{name: "swagger-ui/index.html", size: 1502, mode: os.FileMode(420), modTime: time.Unix(1528473031, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -151,7 +151,7 @@ func swaggerUiOauth2RedirectHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/oauth2-redirect.html", size: 2388, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/oauth2-redirect.html", size: 2388, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -171,7 +171,7 @@ func swaggerUiSwaggerUiBundleJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/swagger-ui-bundle.js", size: 1567612, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/swagger-ui-bundle.js", size: 1567612, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -191,7 +191,7 @@ func swaggerUiSwaggerUiStandalonePresetJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/swagger-ui-standalone-preset.js", size: 443207, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/swagger-ui-standalone-preset.js", size: 443207, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -211,7 +211,7 @@ func swaggerUiSwaggerUiCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/swagger-ui.css", size: 153930, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/swagger-ui.css", size: 153930, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -231,7 +231,7 @@ func swaggerUiSwaggerUiJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "swagger-ui/swagger-ui.js", size: 371089, mode: os.FileMode(420), modTime: time.Unix(1525289278, 0)}
+	info := bindataFileInfo{name: "swagger-ui/swagger-ui.js", size: 371089, mode: os.FileMode(420), modTime: time.Unix(1525827933, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
