@@ -14,6 +14,7 @@ import (
 	service "github.com/samsung-cnct/cluster-manager-api/internal/cluster-manager-api"
 	pb "github.com/samsung-cnct/cluster-manager-api/pkg/generated/api"
 	"github.com/samsung-cnct/cluster-manager-api/pkg/ui/website"
+	grpcutil "github.com/samsung-cnct/cluster-manager-api/pkg/util/grpc"
 )
 
 var (
@@ -64,7 +65,7 @@ func addRestAndWebsite(tcpMux cmux.CMux, grpcPortNumber int) {
 func addgRPCRestGateway(router *http.ServeMux, grpcPortNumber int) {
 	dopts := []grpc.DialOption{grpc.WithInsecure()}
 
-	runtime.HTTPError = service.CustomHTTPError
+	runtime.HTTPError = grpcutil.CustomHTTPError
 	gwmux := runtime.NewServeMux()
 	pb.RegisterClusterHandlerFromEndpoint(context.Background(), gwmux, "localhost:"+strconv.Itoa(grpcPortNumber), dopts)
 	router.Handle("/api/", gwmux)

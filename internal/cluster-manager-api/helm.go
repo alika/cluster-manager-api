@@ -2,6 +2,7 @@ package cluster_manager_api
 
 import (
 	pb "github.com/samsung-cnct/cluster-manager-api/pkg/generated/api"
+	"github.com/samsung-cnct/cluster-manager-api/pkg/util/grpc"
 	"github.com/samsung-cnct/cma-operator/pkg/util/cma"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
@@ -22,22 +23,20 @@ func (s *Server) InstallHelmChart(ctx context.Context, in *pb.InstallHelmChartMs
 			Version: in.Chart.Version,
 		},
 	}), "default", nil)
-
-	message := "Successfully installed " + in.Chart.Chart + " as " + in.Chart.Name + " in " + in.Chart.Namespace
 	if err != nil {
-		return nil, GenerateError(codes.Internal, "An error occured trying to create a SDSApplication: %v", err)
+		return nil, grpc.GenerateError(codes.Internal, "An error occured trying to create a SDSApplication: %v", err)
 	}
 
+	message := "Successfully installed " + in.Chart.Chart + " as " + in.Chart.Name + " in " + in.Chart.Namespace
 	return &pb.InstallHelmChartReply{Ok: res, Message: message}, nil
 }
 
 func (s *Server) DeleteHelmChart(ctx context.Context, in *pb.DeleteHelmChartMsg) (*pb.DeleteHelmChartReply, error) {
 	res, err := cma.DeleteSDSApplication(in.Name, in.Namespace, nil)
-
-	message := "Successfully deleted " + in.Name
 	if err != nil {
-		return nil, GenerateError(codes.Internal, "An error occured trying to delete a SDSApplication: %v", err)
+		return nil, grpc.GenerateError(codes.Internal, "An error occured trying to delete a SDSApplication: %v", err)
 	}
 
+	message := "Successfully deleted " + in.Name
 	return &pb.DeleteHelmChartReply{Ok: res, Message: message}, nil
 }

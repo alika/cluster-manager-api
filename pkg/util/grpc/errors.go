@@ -1,14 +1,20 @@
-package cluster_manager_api
+package grpc
 
 import (
 	"net/http"
 	"strconv"
 
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	"github.com/juju/loggo"
 	pb "github.com/samsung-cnct/cluster-manager-api/pkg/generated/api"
+	"github.com/samsung-cnct/cma-operator/pkg/util"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+)
+
+var (
+	logger loggo.Logger
 )
 
 //WORKAROUND: Should be able to use pb.ErrorReply, but because protobuf
@@ -53,4 +59,8 @@ func CustomHTTPError(ctx context.Context, mux *runtime.ServeMux, marshaler runti
 		logger.Errorf("Was unable encode JSON error reply")
 		w.Write([]byte(fallback))
 	}
+}
+
+func init() {
+	logger = util.GetModuleLogger("pkg.util.grpc", loggo.INFO)
 }

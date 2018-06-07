@@ -2,6 +2,7 @@ package cluster_manager_api
 
 import (
 	pb "github.com/samsung-cnct/cluster-manager-api/pkg/generated/api"
+	"github.com/samsung-cnct/cluster-manager-api/pkg/util/grpc"
 	"github.com/samsung-cnct/cma-operator/pkg/util/k8sutil"
 	"golang.org/x/net/context"
 	"k8s.io/client-go/kubernetes"
@@ -26,12 +27,12 @@ func (s *Server) GetPodCount(ctx context.Context, in *pb.GetPodCountMsg) (*pb.Ge
 	// create the clientSet
 	clientSet, err := kubernetes.NewForConfig(k8sutil.DefaultConfig)
 	if err != nil {
-		return nil, GenerateError(codes.Internal, "Cannot establish a client connection to kubernetes: %v", err)
+		return nil, grpc.GenerateError(codes.Internal, "Cannot establish a client connection to kubernetes: %v", err)
 	}
 
 	pods, err := clientSet.CoreV1().Pods(in.Namespace).List(metav1.ListOptions{})
 	if err != nil {
-		return nil, GenerateError(codes.Internal, "Cannot establish a client connection to kubernetes: %v", err)
+		return nil, grpc.GenerateError(codes.Internal, "Cannot establish a client connection to kubernetes: %v", err)
 	}
 
 	logger.Infof("Was asked to get pods on -->%s<-- namespace, answer was -->%d<--", in.Namespace, int32(len(pods.Items)))
