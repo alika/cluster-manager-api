@@ -50,6 +50,8 @@ install-tools: install-dep
 	go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 	go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 	go get -u github.com/golang/protobuf/protoc-gen-go
+	go get -u github.com/golang/mock/gomock
+	go get -u github.com/golang/mock/mockgen
 	go get github.com/jteeuwen/go-bindata/...
 	go get github.com/elazarl/go-bindata-assetfs/...
 

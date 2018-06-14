@@ -8,11 +8,15 @@ THIS_DIRECTORY=$(dirname "${BASH_SOURCE}")
 PROJECT_DIRECTORY=${THIS_DIRECTORY}/../..
 DESTINATION_LIBRARY=pkg/generated/api
 SWAGGER_DESTINATION=assets/generated/swagger
+MOCK_DESTINATION=pkg/generated/mocks
+MOCK_IMPORT=github.com/samsung-cnct/cluster-manager-api/pkg/generated/api
 
 echo "Ensuring Destination Directory ( ${DESTINATION_LIBRARY} ) Exists..."
 mkdir -p ${PROJECT_DIRECTORY}/${DESTINATION_LIBRARY}
 echo "Ensuring Swagger Asset Direcotry ( ${SWAGGER_DESTINATION} ) Exists..."
 mkdir -p ${PROJECT_DIRECTORY}/${SWAGGER_DESTINATION}
+echo "Ensuring Mock Direcotry ( ${MOCK_DESTINATION} ) Exists..."
+mkdir -p ${PROJECT_DIRECTORY}/${MOCK_DESTINATION}
 
 echo
 echo "generating api stubs..."
@@ -23,6 +27,11 @@ echo
 echo "generating REST gateway stubs..."
 echo "protoc ${PROJECT_DIRECTORY}/api/api.proto -I /usr/local/include/ -I ${PROJECT_DIRECTORY}/api/ -I $GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis -I $GOPATH/src/github.com//grpc-ecosystem/grpc-gateway --grpc-gateway_out=logtostderr=true:${PROJECT_DIRECTORY}/${DESTINATION_LIBRARY}"
 protoc ${PROJECT_DIRECTORY}/api/api.proto -I /usr/local/include/ -I ${PROJECT_DIRECTORY}/api/ -I $GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis -I $GOPATH/src/github.com//grpc-ecosystem/grpc-gateway --grpc-gateway_out=logtostderr=true:${PROJECT_DIRECTORY}/${DESTINATION_LIBRARY}
+
+echo
+echo "generating api mocks..."
+echo "mockgen -destination=${MOCK_DESTINATION}/api.pb.mock.go -package=mocks ${MOCK_IMPORT} ClusterClient"
+mockgen -destination=${MOCK_DESTINATION}/api.pb.mock.go -package=mocks ${MOCK_IMPORT} ClusterClient
 
 echo
 echo "generating swagger docs..."
