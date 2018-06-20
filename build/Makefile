@@ -92,6 +92,11 @@ cma-bin-darwin:
 cma-bin-linux-amd64:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ${BUILD_CMA_BINARY_CMD}
 
+# Tests
+.PHONY: test
+test:
+	$(GOTEST) -v ./...
+
 # Delete an existing binary / cleanup
 remove-binary:
 	rm ${CMA_BINARY_NAME}

@@ -80,6 +80,12 @@
   revision = "23def4e6c14b4da8ac2ed8007337bc5eb5007998"
 
 [[projects]]
+  name = "github.com/golang/mock"
+  packages = ["gomock"]
+  revision = "c34cdb4725f4c3844d095133c6e40e448b86589b"
+  version = "v1.1.1"
+
+[[projects]]
   name = "github.com/golang/protobuf"
   packages = [
     "jsonpb",
@@ -551,6 +557,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9a917b4d001754b6627936df7fac2b91d23fe2bbe0a2b708db22a2d19ac1826c"
+  inputs-digest = "0b976cc2260047df750225c9f795f4ec4b87a5638c535f11318863ea9cfafa12"
   solver-name = "gps-cdcl"
   solver-version = 1
